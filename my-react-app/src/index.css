@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #faf5ee;
+  --color-champagne: #f1e6d3;
+  --color-sand: #e3d2b4;
+  --color-ink: #2a1c19;
+  --color-ink-soft: #5b4a45;
+
+  --color-maroon-950: #1f0307;
+  --color-maroon-900: #33080e;
+  --color-maroon-800: #4a0d16;
+  --color-maroon-700: #650f1d;
+  --color-maroon-600: #7f1a28;
+
+  --color-gold: #c8a24e;
+  --color-gold-light: #e4c986;
+  --color-gold-dark: #8f6e25;
+
+  --color-whatsapp: #1f7a4a;
+  --color-whatsapp-dark: #176139;
+
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", "Cormorant Garamond", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-maroon-950);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(180deg, #f3deA0 0%, #c8a24e 55%, #a07f30 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-damask {
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(200, 162, 78, 0.12), transparent 45%),
+      radial-gradient(circle at 90% 100%, rgba(127, 26, 40, 0.55), transparent 50%);
+  }
+}
