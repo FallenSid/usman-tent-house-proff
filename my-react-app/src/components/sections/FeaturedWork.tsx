@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { business } from "@/data/business";
 import type { ImageKey } from "@/data/images";
@@ -49,9 +50,13 @@ export function FeaturedWork() {
           {features.map((f, i) => (
             <ImageReveal key={f.imageKey} delay={(i % 3) * 0.1} className={cn("h-72 md:h-auto", f.span)}>
               <figure className="group relative h-full overflow-hidden rounded-sm bg-champagne">
-                <div className="h-full w-full transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+                <motion.div
+                  className="h-full w-full"
+                  whileHover={{ scale: 1.06 }}
+                  transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                >
                   <Photo name={f.imageKey} sizes="(min-width:768px) 55vw, 94vw" className={f.position} />
-                </div>
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-t from-maroon-950/80 via-maroon-950/10 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100" />
                 <figcaption className="absolute inset-x-0 bottom-0 p-5 text-ivory transition-transform duration-500 group-hover:-translate-y-1 sm:p-7">
                   <span className="mb-2 block h-px w-10 bg-gold transition-all duration-500 group-hover:w-20" />
