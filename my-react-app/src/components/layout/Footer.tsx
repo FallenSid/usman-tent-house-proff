@@ -98,13 +98,13 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} {business.name}. All rights reserved.
           </p>
-          <p>
+          {/* <p>
             Photographs are representative stock images courtesy of{" "}
             <a href="https://www.pexels.com" target="_blank" rel="noopener noreferrer" className="underline decoration-gold/50 underline-offset-4 hover:text-gold-light">
               Pexels
             </a>{" "}
             contributors.
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

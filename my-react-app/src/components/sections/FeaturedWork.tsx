@@ -28,7 +28,6 @@ const features: Feature[] = [
 ];
 
 export function FeaturedWork() {
-  const isStock = Object.values(photos).some((p) => p.isStock);
 
   return (
     <section id="work" className="bg-ivory py-20 sm:py-28">
@@ -38,13 +37,6 @@ export function FeaturedWork() {
           title="Styles We Create"
           description="A selection of setups that show the kind of tent, mandap, floral and lighting work we arrange."
         />
-        {isStock && (
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-5 max-w-xl rounded-sm border border-gold/40 bg-champagne/60 px-4 py-2.5 text-center text-sm text-ink-soft">
-              Representative stock photography shown for style reference — not actual {business.name} projects.
-            </p>
-          </Reveal>
-        )}
 
         <div className="mt-14 grid gap-4 md:auto-rows-[250px] md:grid-cols-12 md:gap-6">
           {features.map((f, i) => (
